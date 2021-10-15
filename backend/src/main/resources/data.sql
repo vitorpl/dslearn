@@ -33,4 +33,10 @@ INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prer
 INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) values
 ('Capítulo 2', 'Primeiros passos', 2, 'https://res.cloudinary.com/dte7upwcr/image/upload/f_auto,w_1500/v1618959177/blog/blog2/curso-de-programacao/curso-de-programacao-img_header.jpg', 1, 1);
 INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) values
-('Capítulo 3', 'Conhecendo o projeto', 3, 'https://res.cloudinary.com/dte7upwcr/image/upload/f_auto,w_1500/v1618959177/blog/blog2/curso-de-programacao/curso-de-programacao-img_header.jpg', 1, 2); 
+('Capítulo 3', 'Conhecendo o projeto', 3, 'https://res.cloudinary.com/dte7upwcr/image/upload/f_auto,w_1500/v1618959177/blog/blog2/curso-de-programacao/curso-de-programacao-img_header.jpg', 1, 2);
+
+
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refound_Moment, available, only_update) values
+(1, 1, TIMESTAMP WITH TIME ZONE '2022-10-15T18:00:00Z', null, true, false);
+INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refound_Moment, available, only_update) values
+(2, 1, TIMESTAMP WITH TIME ZONE '2022-10-15T18:00:00Z', null, true, false);    
