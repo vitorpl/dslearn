@@ -26,3 +26,11 @@ INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) 
 
 INSERT INTO tb_resource (title, description, position, img_Uri, type, offer_id) values
 ('Lives', 'Lives ao vivo exclusivas', 3, 'https://res.cloudinary.com/dte7upwcr/image/upload/f_auto,w_1500/v1618959177/blog/blog2/curso-de-programacao/curso-de-programacao-img_header.jpg', 0, 1);
+
+
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) values
+('Capítulo 1', 'Neste capítulo vamos começar', 1, 'https://res.cloudinary.com/dte7upwcr/image/upload/f_auto,w_1500/v1618959177/blog/blog2/curso-de-programacao/curso-de-programacao-img_header.jpg', 1, null);
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) values
+('Capítulo 2', 'Primeiros passos', 2, 'https://res.cloudinary.com/dte7upwcr/image/upload/f_auto,w_1500/v1618959177/blog/blog2/curso-de-programacao/curso-de-programacao-img_header.jpg', 1, 1);
+INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prerequisite_id) values
+('Capítulo 3', 'Conhecendo o projeto', 3, 'https://res.cloudinary.com/dte7upwcr/image/upload/f_auto,w_1500/v1618959177/blog/blog2/curso-de-programacao/curso-de-programacao-img_header.jpg', 1, 2); 
