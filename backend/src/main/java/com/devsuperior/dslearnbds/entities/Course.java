@@ -1,11 +1,14 @@
 package com.devsuperior.dslearnbds.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,7 +24,10 @@ public class Course implements Serializable {
 	private String name;
 	private String imgUri;
 	private String imgGrayUri;
-
+	
+	@OneToMany(mappedBy = "course") //nome do atributo e não da coluna
+	private List<Offer> offers = new ArrayList<>(); 
+	
 	public Course() {}
 
 	public Course(Long id, String name, String imgUri, String imgGrayUri) {
@@ -62,6 +68,10 @@ public class Course implements Serializable {
 
 	public void setImgGrayUri(String imgGrayUri) {
 		this.imgGrayUri = imgGrayUri;
+	}
+	
+	public List<Offer> getOffers() {
+		return offers;
 	}
 
 	@Override
