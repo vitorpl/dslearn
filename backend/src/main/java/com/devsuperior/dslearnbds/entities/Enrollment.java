@@ -2,13 +2,16 @@ package com.devsuperior.dslearnbds.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.devsuperior.dslearnbds.entities.pk.EnrollmentPK;
@@ -34,6 +37,9 @@ public class Enrollment implements Serializable {
 	//use Set quando não puder ter repetição e o List quando puder repetir
 	@ManyToMany(mappedBy = "enrollmensDone") //atributo que mapeei na outra ponta
 	private Set<Lesson> lesssonsDone = new HashSet<>();
+	
+	@OneToMany
+	private List<Deliver> deliveries = new ArrayList<>();
 	
 	public Enrollment() {}
 
@@ -126,6 +132,10 @@ public class Enrollment implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public List<Deliver> getDeliveries() {
+		return deliveries;
 	}
 	
 }

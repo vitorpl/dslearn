@@ -1,7 +1,9 @@
 package com.devsuperior.dslearnbds.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -14,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 //a classe abstract pois não é criada uma instância direta de Lesson, apenas Task ou Content
@@ -50,6 +53,9 @@ public abstract class Lesson implements Serializable {
 					} 
 			)
 	private Set<Enrollment> enrollmensDone = new HashSet<>();
+	
+	@OneToMany
+	private List<Deliver> deliveries = new ArrayList<>();
 	
 	public Lesson() {}
 
@@ -97,6 +103,10 @@ public abstract class Lesson implements Serializable {
 		return enrollmensDone;
 	}
 
+	public List<Deliver> getDeliveries() {
+		return deliveries;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -121,5 +131,6 @@ public abstract class Lesson implements Serializable {
 			return false;
 		return true;
 	}
+
 	
 }
