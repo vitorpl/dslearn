@@ -39,4 +39,18 @@ INSERT INTO tb_section (title, description, position, img_Uri, resource_id, prer
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refound_Moment, available, only_update) values
 (1, 1, TIMESTAMP WITH TIME ZONE '2022-10-15T18:00:00Z', null, true, false);
 INSERT INTO tb_enrollment (user_id, offer_id, enroll_Moment, refound_Moment, available, only_update) values
-(2, 1, TIMESTAMP WITH TIME ZONE '2022-10-15T18:00:00Z', null, true, false);    
+(2, 1, TIMESTAMP WITH TIME ZONE '2022-10-15T18:00:00Z', null, true, false);   
+
+
+INSERT INTO TB_LESSON (title, position, section_id) values ('Aula 1 cap 1', 1, 1);
+INSERT INTO TB_CONTENT (id, text_content, video_uri) values (1, 'Material de apoio: abc', 'https://www.youtube.com/watch?v=QekeJBShCy4'); 
+INSERT INTO TB_LESSON (title, position, section_id) values ('Aula 2 cap 1', 2, 1);
+INSERT INTO TB_CONTENT (id, text_content, video_uri) values (2, 'Material de apoio: abc', 'https://www.youtube.com/watch?v=QekeJBShCy4');
+INSERT INTO TB_LESSON (title, position, section_id) values ('Aula 3 cap 1', 3, 1); 
+INSERT INTO TB_CONTENT (id, text_content, video_uri) values (3, 'Material de apoio: abc', 'https://www.youtube.com/watch?v=QekeJBShCy4');
+
+INSERT INTO TB_LESSON (title, position, section_id) values ('Tarefa 1 cap 1', 4, 1);
+INSERT INTO TB_TASK (id, description, question_count, approval_count, weight, due_date) values (4, 'Fazer uma tarefa boladona', 5, 4, 1.0, TIMESTAMP WITH TIME ZONE '2022-10-31T18:00:00Z');
+
+INSERT INTO TB_LESSONS_DONE (LESSON_ID, USER_ID, OFFER_ID) VALUES  (1, 1, 1);
+INSERT INTO TB_LESSONS_DONE (LESSON_ID, USER_ID, OFFER_ID) VALUES  (2, 1, 1);
