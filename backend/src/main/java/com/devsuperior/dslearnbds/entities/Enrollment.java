@@ -32,7 +32,7 @@ public class Enrollment implements Serializable {
 	private boolean onlyUpdate;
 
 	//use Set quando não puder ter repetição e o List quando puder repetir
-	@ManyToMany(mappedBy = "enrollmentDone") //atributo que mapeei na outra ponta
+	@ManyToMany(mappedBy = "enrollmensDone") //atributo que mapeei na outra ponta
 	private Set<Lesson> lesssonsDone = new HashSet<>();
 	
 	public Enrollment() {}
